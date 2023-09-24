@@ -1,0 +1,51 @@
+{
+    "infoPage1": "Where Care Meets Convenience",
+    "@infoPage1": {
+        "description": "wow "
+    },
+
+    "login": "Login",
+    "@Login": {
+        "description": "2 "
+    },
+
+    "email": "Emal",
+    "@Email": {
+        "description": "wo3w "
+    },
+
+    "password": "Password",
+    "@Password": {
+        "description": "4 "
+    },
+
+    "already_have_an_account": "Already have an account?",
+    "@already_have_an_account": {
+        "description": "5 "
+    },
+
+    "signup": "Sign Up",
+    "@Signup": {
+        "description": "6 "
+    },
+
+    "here": "here",
+    "@here": {
+        "description": "7 "
+    },
+
+    "if_new": "if you are new  ",
+    "@if_new": {
+        "description": "8"
+    },
+
+    "register": "Register",
+    "@register": {
+        "description": "10"
+    },
+
+    "no_acc": "dont have an account ? ",
+    "@no_acc": {
+        "description": "9"
+    }
+}
