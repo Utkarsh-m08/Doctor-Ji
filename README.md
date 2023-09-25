@@ -13,10 +13,13 @@ Front End - Flutter(as we need it to be accessible to all and flutter does a gre
 
 link for the working bot to use directly -
 
-
+-
+__
+___
 https://mediafiles.botpress.cloud/01dad379-e4cc-4835-b71f-e8e4ae05fcd0/webchat/bot.html
-
-
+___
+__
+_
 
 
 BACKEND - Firebase ( a robust authentication and databse management system backed by google used by multiple mncs), python for AI and chatbots
