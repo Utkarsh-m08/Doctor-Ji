@@ -14,15 +14,12 @@ Front End - Flutter(as we need it to be accessible to all and flutter does a gre
 ![Screenshot 2023-09-25 110645](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/c652d736-bc1f-436e-b334-7bc09a0b8d9b)
 ___
 
-link for the working bot to use directly -
-.
-...
+link for the working bot to use directly from web - https://mediafiles.botpress.cloud/01dad379-e4cc-4835-b71f-e8e4ae05fcd0/webchat/bot.html
+
 ___
 https:![Screenshot 2023-09-25 143854](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/6283e796-f23a-48ca-87d5-a8b7806a4ff2)
-//mediafiles.botpress.cloud/01dad379-e4cc-4835-b71f-e8e4ae05fcd0/webchat/bot.html
 ___
-...
-.
+
 
 ___
 BACKEND - Firebase ( a robust authentication and databse management system backed by google used by multiple mncs), python for AI and chatbots
