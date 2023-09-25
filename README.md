@@ -43,7 +43,7 @@ Using firebase authenticationg and registering users
 ![Screenshot 2023-09-24 191953](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/22f78aaf-dbd6-4a42-863c-8f374c14f568)
 
 HOME SCREEN
-home screen where our doctor ji lives you can book apointments,he can check doctors availibility,get you an ambulance and do almost anything you would expect a hospital to do.
+home screen where our doctor ji lives you can book apointments,he can check doctors availibility,get you an ambulance and do almost anything you would expect from a call with long waiting time to a hospital to do.
 
 
 
