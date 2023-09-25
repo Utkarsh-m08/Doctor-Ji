@@ -28,12 +28,12 @@ BACKEND - Firebase ( a robust authentication and databse management system backe
 ![Screenshot 2023-09-23 153422](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/f09f385a-b804-41ba-a566-03cf1787eec5)   ![Screenshot 2023-09-23 153433](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/d9b9731b-12a5-4460-933c-e4b195e44ae5)
 
 
-
+___
 FLOW - 
 The flow of the project 
 https://whimsical.com/doctor-ji-app-user-mHDGQ5XDj3XZQhzFvQan5
 
-
+___
 FUNCTIONALITY - 
 First and foremost- to make doctor ji more accessible we are adding a multi language dataset on the app so that language is not the issue holding any user back.
 
