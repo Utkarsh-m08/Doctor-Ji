@@ -7,7 +7,15 @@ BACKGROUND and Objective: modern technologies like ai integrated tools, often as
 
 DEVELOPMENT - 
 Front End - flutter(as we need it to be accessible to all and flutter does a great job in making all round apps for all devices),
+
+
+![Screenshot 2023-09-25 110645](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/c652d736-bc1f-436e-b334-7bc09a0b8d9b)
+
+
+
 backend - Firebase ( a robust authentication and databse management system backed by google used by multipkle mncs), python for AI and chatbots
+
+
 ![Screenshot 2023-09-23 153422](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/f09f385a-b804-41ba-a566-03cf1787eec5)   ![Screenshot 2023-09-23 153433](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/d9b9731b-12a5-4460-933c-e4b195e44ae5)
 
 
