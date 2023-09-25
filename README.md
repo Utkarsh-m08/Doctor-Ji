@@ -36,7 +36,7 @@ https://whimsical.com/doctor-ji-app-user-mHDGQ5XDj3XZQhzFvQan5
 
 ___
 FUNCTIONALITY - 
-First and foremost- to make doctor ji more accessible we are adding a multi language dataset on the app so that language is not the issue holding any user back.
+First and foremost- to make doctor ji more accessible we are adding a multi language dataset on the app so that language is not the issue holding any user back. and they can talk to doctor ji in their native language
 
 ![Screenshot 2023-09-24 191821](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/1aa3332e-468d-4ad3-88ce-60543bc8d68e)
 
