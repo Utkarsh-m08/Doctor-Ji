@@ -6,7 +6,7 @@ Streamlining hospital apointments and functionalities using our chatbot - doctor
 BACKGROUND AND OBJECTTIVE: modern technologies like AI integrated tools , has reached everywhere making students life easier but making them more incompetent , The true power of AI id yet to be harnessed properly in important fields like banking , healthcare , administration etc. Modern healthcare fetures and facilities are still far from some common folk, people ranging from old to young often need assistance in booking tests and appointments due to lack of knowledge,acessibility,large language barriers and usage of technology they can not understand. Also streamlining this process through Artificial inteligence eliminating long lines and hassel free phone calls will save time and improve overall efficiency. An all round AI model with robust logic that can assist with Streamlined bookingas well as Alocating apointments efficiently is much needed
 
 DEVELOPMENT - 
-Front End - flutter(as we need it to be accessible to all and flutter does a great job in making all round apps for all devices),
+Front End - Flutter(as we need it to be accessible to all and flutter does a great job in making all round apps for all devices),
 
 
 ![Screenshot 2023-09-25 110645](https://github.com/Utkarsh-m08/Doctor-Ji/assets/139049170/c652d736-bc1f-436e-b334-7bc09a0b8d9b)
