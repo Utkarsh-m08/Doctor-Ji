@@ -60,6 +60,7 @@ home screen where our doctor ji lives you can book apointments,he can check doct
 ___
 THE HOSPITAL SIDE SITE-
 With AI integration to smoothen the experiance.
+link for the site - https://github.com/c-o-d-e-y-o-d-a/SIH-business-site
 
 
 
