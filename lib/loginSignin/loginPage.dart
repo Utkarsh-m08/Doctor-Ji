@@ -55,115 +55,115 @@ class _loginPageState extends State<loginPage> {
     return Scaffold(
       // resizeToAvoidBottomInset: false,
       backgroundColor: rang1,
-      body: Center(
-        child: SingleChildScrollView(
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20))),
-            child: Align(
-              alignment: Alignment(0, -0.2),
-              child: SingleChildScrollView(
-                physics: NeverScrollableScrollPhysics(),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, top: 20, bottom: 20),
-                      child: Text(
+      body: Container(
+        height: screenheight,
+        width: screenWidth,
+        child: Center(
+          child: ListView(
+            children: [
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: screenheight * 0.05, bottom: screenheight * 0.05),
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
                         AppLocalizations.of(context).login,
                         style: GoogleFonts.montserrat(
-                          fontSize: screenWidth / 12,
                           fontWeight: FontWeight.bold,
+                          fontSize: screenWidth * 0.1,
                           color: prop.rang5,
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, top: 5, bottom: 0),
-                      child: TextField(
-                        controller: emailController,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              width: 0,
-                              color: prop.rang5,
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: screenheight * 0.04,
+                          left: 20,
+                          right: 20,
+                        ),
+                        child: TextField(
+                          controller: emailController,
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                width: 0,
+                                color: prop.rang5,
+                              ),
                             ),
+                            fillColor: prop.rang1,
+                            focusColor: prop.rang2,
+                            labelText: AppLocalizations.of(context).email,
+                            helperText: '',
+                            filled: true,
                           ),
-                          fillColor: prop.rang1,
-                          focusColor: prop.rang2,
-                          labelText: AppLocalizations.of(context).email,
-                          helperText: '',
-                          filled: true,
-                        ),
-                        style: GoogleFonts.montserrat(
-                          // fontWeight: FontWeight.bold,
-                          fontSize: screenWidth / 20,
-                          color: rang5,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        top: 5,
-                        bottom: 0,
-                      ),
-                      child: TextField(
-                        obscureText: true,
-                        controller: passwordController,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              width: 0,
-                              color: prop.rang5,
-                            ),
-                          ),
-                          fillColor: prop.rang1,
-                          focusColor: prop.rang2,
-                          labelText: AppLocalizations.of(context).password,
-                          helperText: '',
-                          // filled: true,
-                        ),
-                        style: GoogleFonts.montserrat(
-                          // fontWeight: FontWeight.bold,
-                          fontSize: screenWidth / 20,
-                          color: rang5,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: screenWidth / 7,
-                      width: screenWidth * 0.9,
-                      decoration: BoxDecoration(
-                          color: rang5, borderRadius: BorderRadius.circular(5)),
-                      child: TextButton(
-                        onPressed: () {
-                          login();
-                          Navigator.pop(context);
-                        },
-                        child: Text(
-                          AppLocalizations.of(context).login,
                           style: GoogleFonts.montserrat(
                             // fontWeight: FontWeight.bold,
-                            fontSize: screenWidth / 15,
-                            color: rang1,
+                            fontSize: screenWidth * 0.05,
+                            color: rang5,
                           ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 30, right: 20),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          right: 20,
+                        ),
+                        child: TextField(
+                          obscureText: true,
+                          controller: passwordController,
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                width: 0,
+                                color: prop.rang5,
+                              ),
+                            ),
+                            fillColor: prop.rang1,
+                            focusColor: prop.rang2,
+                            labelText: AppLocalizations.of(context).password,
+                            helperText: '',
+                            // filled: true,
+                          ),
+                          style: GoogleFonts.montserrat(
+                            // fontWeight: FontWeight.bold,
+                            fontSize: screenWidth * 0.05,
+                            color: rang5,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: screenWidth * 0.15,
+                        width: screenWidth * 0.9,
+                        decoration: BoxDecoration(
+                          color: rang5,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: TextButton(
+                          onPressed: () {
+                            login();
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                            AppLocalizations.of(context).login,
+                            style: GoogleFonts.montserrat(
+                              // fontWeight: FontWeight.bold,
+                              fontSize: screenWidth * 0.08,
+                              color: rang1,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20, right: 20),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               AppLocalizations.of(context).no_acc,
                               style: GoogleFonts.montserrat(
                                 // fontWeight: FontWeight.bold,
-                                fontSize: screenheight / 40,
+                                fontSize: screenWidth * 0.04,
                                 color: rang5,
                               ),
                             ),
@@ -180,7 +180,7 @@ class _loginPageState extends State<loginPage> {
                                 AppLocalizations.of(context).signup,
                                 style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: screenheight / 35,
+                                  fontSize: screenWidth * 0.05,
                                   color: rang5,
                                 ),
                               ),
@@ -189,18 +189,18 @@ class _loginPageState extends State<loginPage> {
                               AppLocalizations.of(context).here,
                               style: GoogleFonts.montserrat(
                                 // fontWeight: FontWeight.bold,
-                                fontSize: screenheight / 40,
+                                fontSize: screenWidth * 0.04,
                                 color: rang5,
                               ),
                             ),
                           ],
                         ),
                       ),
-                    )
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
         ),
       ),

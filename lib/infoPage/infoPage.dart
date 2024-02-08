@@ -166,7 +166,8 @@ class _infoPageState extends State<infoPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
+                          DialogRoute(
+                            context: context,
                             builder: (context) => languageSelect(),
                           ),
                         );

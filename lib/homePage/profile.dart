@@ -42,9 +42,13 @@ class _profileState extends State<profile> {
         scrollDirection: Axis.vertical,
         children: [
           Padding(
-            padding:
-                const EdgeInsets.only(top: 20, left: 10, bottom: 10, right: 10),
+            padding: EdgeInsets.only(
+              top: screenheight * 0.02,
+              // left: screenWidth * 0.02,
+              // right: screenWidth * 0.02,
+            ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   height: screenWidth * 0.4,
@@ -57,7 +61,7 @@ class _profileState extends State<profile> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 0),
                   child: Container(
                     height: screenWidth * 0.4,
                     width: screenWidth * 0.5,
@@ -69,50 +73,55 @@ class _profileState extends State<profile> {
                     ),
                     child: ListView(
                       children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            user.email!,
-                            style: GoogleFonts.montserrat(
-                              // fontWeight: FontWeight.bold,
-                              fontSize: screenheight / 25,
-                              color: rang5,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                user.email!,
+                                style: GoogleFonts.montserrat(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: screenWidth * 0.07,
+                                  color: rang5,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Mobile:",
-                            style: GoogleFonts.montserrat(
-                              // fontWeight: FontWeight.bold,
-                              fontSize: screenheight / 40,
-                              color: rang5,
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Mobile:",
+                                style: GoogleFonts.montserrat(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: screenWidth * 0.05,
+                                  color: rang5,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Email: " + user.email!,
-                            style: GoogleFonts.montserrat(
-                              // fontWeight: FontWeight.bold,
-                              fontSize: screenheight / 40,
-                              color: rang5,
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Email: " + user.email!,
+                                style: GoogleFonts.montserrat(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: screenWidth * 0.05,
+                                  color: rang5,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Address: ",
-                            style: GoogleFonts.montserrat(
-                              // fontWeight: FontWeight.bold,
-                              fontSize: screenheight / 40,
-                              color: rang5,
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Address: ",
+                                style: GoogleFonts.montserrat(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: screenWidth * 0.05,
+                                  color: rang5,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
+                          ],
+                        )
                       ],
                     ),
                   ),
@@ -121,7 +130,11 @@ class _profileState extends State<profile> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 190, right: 10, bottom: 50),
+            padding: EdgeInsets.only(
+              left: screenWidth * 0.03,
+              right: screenWidth * 0.03,
+              bottom: screenheight * 0.03,
+            ),
             child: ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(
@@ -149,7 +162,7 @@ class _profileState extends State<profile> {
                   "edit account details",
                   style: GoogleFonts.montserrat(
                     // fontWeight: FontWeight.bold,
-                    fontSize: screenheight / 47,
+                    fontSize: screenWidth * 0.05,
                     color: rang1,
                   ),
                 ),
@@ -217,7 +230,7 @@ class _profileState extends State<profile> {
                 icon: Icon(
                   Icons.book_outlined,
                   color: rang5,
-                  size: 40,
+                  size: screenWidth * 0.08,
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: prop.rang1,

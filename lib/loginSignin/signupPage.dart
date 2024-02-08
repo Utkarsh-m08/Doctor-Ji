@@ -56,166 +56,158 @@ class _signupPageState extends State<signupPage> {
     return Scaffold(
       // resizeToAvoidBottomInset: false,
       backgroundColor: rang1,
-      body: Center(
-        child: SingleChildScrollView(
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20))),
-            child: Align(
-              alignment: Alignment(0, -0.2),
-              child: SingleChildScrollView(
-                physics: NeverScrollableScrollPhysics(),
-                child: Column(
-                  children: [
-                    Text(
-                      AppLocalizations.of(context).if_new,
-                      style: GoogleFonts.montserrat(
-                        fontSize: screenWidth / 18,
-                        // fontWeight: FontWeight.bold,
-                        color: prop.rang5,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        top: 20,
-                        bottom: 20,
-                      ),
-                      child: Text(
-                        AppLocalizations.of(context).register,
-                        style: GoogleFonts.montserrat(
-                          fontSize: screenWidth / 12,
-                          fontWeight: FontWeight.bold,
-                          color: prop.rang5,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, top: 5, bottom: 0),
-                      child: TextField(
-                        controller: emailController,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              width: 0,
-                              color: prop.rang5,
-                            ),
-                          ),
-                          fillColor: prop.rang1,
-                          focusColor: prop.rang2,
-                          labelText: AppLocalizations.of(context).email,
-                          helperText: '',
-                          filled: true,
-                        ),
-                        style: GoogleFonts.montserrat(
-                          // fontWeight: FontWeight.bold,
-                          fontSize: screenWidth / 20,
-                          color: rang5,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        top: 5,
-                        bottom: 0,
-                      ),
-                      child: TextField(
-                        obscureText: true,
-                        controller: passwordController,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              width: 0,
-                              color: prop.rang5,
-                            ),
-                          ),
-                          fillColor: prop.rang1,
-                          focusColor: prop.rang2,
-                          labelText: AppLocalizations.of(context).password,
-                          helperText: '',
-                          // filled: true,
-                        ),
-                        style: GoogleFonts.montserrat(
-                          // fontWeight: FontWeight.bold,
-                          fontSize: screenWidth / 20,
-                          color: rang5,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: screenWidth / 7,
-                      width: screenWidth * 0.9,
-                      decoration: BoxDecoration(
-                          color: rang5, borderRadius: BorderRadius.circular(5)),
-                      child: TextButton(
-                        onPressed: () {
-                          register();
-                          Navigator.pop(context);
-                        },
-                        child: Text(
-                          AppLocalizations.of(context).signup,
-                          style: GoogleFonts.montserrat(
-                            // fontWeight: FontWeight.bold,
-                            fontSize: screenWidth / 15,
-                            color: rang1,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 45, right: 20),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Row(
-                          children: [
-                            Text(
-                              AppLocalizations.of(context)
-                                  .already_have_an_account,
-                              style: GoogleFonts.montserrat(
-                                // fontWeight: FontWeight.bold,
-                                fontSize: screenheight / 40,
-                                color: rang5,
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => loginPage(),
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                AppLocalizations.of(context).login,
-                                style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: screenheight / 35,
-                                  color: rang5,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              AppLocalizations.of(context).here,
-                              style: GoogleFonts.montserrat(
-                                // fontWeight: FontWeight.bold,
-                                fontSize: screenheight / 40,
-                                color: rang5,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
+      body: Padding(
+        padding: EdgeInsets.only(
+            top: screenheight * 0.05, bottom: screenheight * 0.05),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              AppLocalizations.of(context).if_new,
+              style: GoogleFonts.montserrat(
+                // fontWeight: FontWeight.bold,
+                fontSize: screenWidth * 0.06,
+                color: prop.rang5,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+                right: 20,
+                top: 20,
+                bottom: 20,
+              ),
+              child: Text(
+                AppLocalizations.of(context).register,
+                style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.bold,
+                  fontSize: screenWidth * 0.1,
+                  color: prop.rang5,
                 ),
               ),
             ),
-          ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: screenheight * 0.04,
+                left: 20,
+                right: 20,
+              ),
+              child: TextField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 0,
+                      color: prop.rang5,
+                    ),
+                  ),
+                  fillColor: prop.rang1,
+                  focusColor: prop.rang2,
+                  labelText: AppLocalizations.of(context).email,
+                  helperText: '',
+                  filled: true,
+                ),
+                style: GoogleFonts.montserrat(
+                  // fontWeight: FontWeight.bold,
+                  fontSize: screenWidth * 0.05,
+                  color: rang5,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
+              child: TextField(
+                obscureText: true,
+                controller: passwordController,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 0,
+                      color: prop.rang5,
+                    ),
+                  ),
+                  fillColor: prop.rang1,
+                  focusColor: prop.rang2,
+                  labelText: AppLocalizations.of(context).password,
+                  helperText: '',
+                  // filled: true,
+                ),
+                style: GoogleFonts.montserrat(
+                  // fontWeight: FontWeight.bold,
+                  fontSize: screenWidth * 0.05,
+                  color: rang5,
+                ),
+              ),
+            ),
+            Container(
+              height: screenWidth * 0.15,
+              width: screenWidth * 0.9,
+              decoration: BoxDecoration(
+                  color: rang5, borderRadius: BorderRadius.circular(5)),
+              child: TextButton(
+                onPressed: () {
+                  register();
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  AppLocalizations.of(context).signup,
+                  style: GoogleFonts.montserrat(
+                    // fontWeight: FontWeight.bold,
+                    fontSize: screenWidth / 15,
+                    color: rang1,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 45, right: 20),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  children: [
+                    Text(
+                      AppLocalizations.of(context).already_have_an_account,
+                      style: GoogleFonts.montserrat(
+                        // fontWeight: FontWeight.bold,
+                        fontSize: screenWidth * 0.04,
+                        color: rang5,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => loginPage(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        AppLocalizations.of(context).login,
+                        style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.bold,
+                          fontSize: screenWidth * 0.05,
+                          color: rang5,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      AppLocalizations.of(context).here,
+                      style: GoogleFonts.montserrat(
+                        // fontWeight: FontWeight.bold,
+                        fontSize: screenWidth * 0.04,
+                        color: rang5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -21,12 +21,11 @@ class _doctorJiPageState extends State<doctorJiPage> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenheight = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 0),
       child: Scaffold(
-        body: ListView(children: [
-          Align(
-            alignment: Alignment(0, 0),
-            child: Column(
+        body: ListView(
+          children: [
+            Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
@@ -140,76 +139,64 @@ class _doctorJiPageState extends State<doctorJiPage> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 20),
                   child: Row(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 50, right: 10),
-                          child: Container(
-                            height: screenWidth * 0.35,
-                            width: screenWidth * 0.35,
-                            decoration: BoxDecoration(
-                              color: prop.rang3,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(100),
-                              ),
-                            ),
-                            child: ElevatedButton.icon(
-                              icon: Icon(
-                                Icons.health_and_safety_outlined,
-                                color: prop.rang5,
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                elevation: 5,
-                                backgroundColor: prop.rang1,
-                                foregroundColor: prop.rang1Text,
-                              ),
-                              onPressed: () {},
-                              label: Text(
-                                "Find nearest    hospital",
-                                style: GoogleFonts.montserrat(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: screenheight / 45,
-                                  color: rang5,
-                                ),
-                              ),
+                      Container(
+                        height: screenWidth * 0.35,
+                        width: screenWidth * 0.35,
+                        decoration: BoxDecoration(
+                          color: prop.rang3,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(100),
+                          ),
+                        ),
+                        child: ElevatedButton.icon(
+                          icon: Icon(
+                            Icons.health_and_safety_outlined,
+                            color: prop.rang5,
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            elevation: 5,
+                            backgroundColor: prop.rang1,
+                            foregroundColor: prop.rang1Text,
+                          ),
+                          onPressed: () {},
+                          label: Text(
+                            "Find nearest    hospital",
+                            style: GoogleFonts.montserrat(
+                              // fontWeight: FontWeight.bold,
+                              fontSize: screenWidth * 0.03,
+                              color: rang5,
                             ),
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10, right: 50),
-                          child: Container(
-                            height: screenWidth * 0.35,
-                            width: screenWidth * 0.35,
-                            decoration: BoxDecoration(
-                              color: prop.rang3,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(100),
-                              ),
-                            ),
-                            child: ElevatedButton.icon(
-                              icon: Icon(
-                                Icons.emergency_outlined,
-                                color: prop.rang5,
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                elevation: 5,
-                                backgroundColor: prop.rang1,
-                                foregroundColor: prop.rang1Text,
-                              ),
-                              onPressed: () {},
-                              label: Text(
-                                "Emergency\n       SOS",
-                                style: GoogleFonts.montserrat(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: screenheight / 50,
-                                  color: rang5,
-                                ),
-                              ),
+                      Container(
+                        height: screenWidth * 0.35,
+                        width: screenWidth * 0.35,
+                        decoration: BoxDecoration(
+                          color: prop.rang3,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(100),
+                          ),
+                        ),
+                        child: ElevatedButton.icon(
+                          icon: Icon(
+                            Icons.emergency_outlined,
+                            color: prop.rang5,
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            elevation: 5,
+                            backgroundColor: prop.rang1,
+                            foregroundColor: prop.rang1Text,
+                          ),
+                          onPressed: () {},
+                          label: Text(
+                            "Emergency\nSOS",
+                            style: GoogleFonts.montserrat(
+                              // fontWeight: FontWeight.bold,
+                              fontSize: screenWidth * 0.03,
+                              color: rang5,
                             ),
                           ),
                         ),
@@ -222,7 +209,7 @@ class _doctorJiPageState extends State<doctorJiPage> {
                     padding:
                         const EdgeInsets.only(left: 10, right: 10, bottom: 10),
                     child: Container(
-                      height: screenheight * 0.25,
+                      height: screenheight * 0.3,
                       width: screenWidth * 0.95,
                       decoration: BoxDecoration(
                         color: prop.rang3,
@@ -232,29 +219,43 @@ class _doctorJiPageState extends State<doctorJiPage> {
                       ),
                       child: ListView(
                         children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: prop.rang5,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(50),
-                                  ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: prop.rang5,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(12),
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    "Doctor Ji:   How can I help You Today",
-                                    style: GoogleFonts.montserrat(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: screenheight / 40,
-                                      color: rang1,
-                                    ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Doctor Ji:   How can I help You Today !",
+                                  style: GoogleFonts.montserrat(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: screenWidth * 0.05,
+                                    color: rang1,
                                   ),
                                 ),
                               ),
+                            ),
+                          ),
+                          Container(
+                            width: screenWidth * 0.4,
+                            child: ElevatedButton.icon(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.mic,
+                                color: rang5,
+                                size: screenWidth * 0.2,
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                elevation: 5,
+                                backgroundColor: prop.rang1,
+                                foregroundColor: prop.rang1Text,
+                              ),
+                              label: Text(''),
                             ),
                           ),
                           Padding(
@@ -288,8 +289,8 @@ class _doctorJiPageState extends State<doctorJiPage> {
                 )
               ],
             ),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }

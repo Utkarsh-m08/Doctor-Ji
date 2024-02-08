@@ -20,282 +20,285 @@ class _personalInfoState extends State<personalInfo> {
     double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: prop.rang1,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(30),
-          child: Column(
-            children: [
-              Align(
-                alignment: Alignment(0, 0),
-                child: Container(
-                  height: screenheight * 0.78,
-                  width: screenWidth * 0.9,
-                  decoration: BoxDecoration(
-                    color: prop.rang1,
-                    // borderRadius: BorderRadius.all(
-                    //   Radius.circular(20),
-                    // ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: prop.rang6,
-                        offset: const Offset(
-                          0.0,
-                          0.0,
+      body: ListView(children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              height: screenheight * 0.78,
+              width: screenWidth * 0.9,
+              decoration: BoxDecoration(
+                color: prop.rang1,
+                // borderRadius: BorderRadius.all(
+                //   Radius.circular(20),
+                // ),
+                boxShadow: [
+                  BoxShadow(
+                    color: prop.rang6,
+                    offset: const Offset(
+                      0.0,
+                      0.0,
+                    ),
+                    blurRadius: 0,
+                    spreadRadius: 0,
+                  ), //BoxShadow
+                  BoxShadow(
+                    color: prop.rang5,
+                    offset: const Offset(0, 4),
+                    blurRadius: 3,
+                    spreadRadius: -2,
+                  ), //BoxShadow
+                ],
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+              child: ListView(children: [
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 30, left: 0, bottom: 0),
+                      child: Text(
+                        "Your Medical",
+                        style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.bold,
+                          fontSize: screenWidth / 15,
+                          color: prop.rang5,
                         ),
-                        blurRadius: 0,
-                        spreadRadius: 0,
-                      ), //BoxShadow
-                      BoxShadow(
-                        color: prop.rang5,
-                        offset: const Offset(0, 4),
-                        blurRadius: 3,
-                        spreadRadius: -2,
-                      ), //BoxShadow
-                    ],
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                  child: ListView(children: [
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              top: 0, left: 10, bottom: 50),
-                          child: Text(
-                            "Your Medical \nDetails",
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 0, left: 0, bottom: 50),
+                      child: Text(
+                        " Details: ",
+                        style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.bold,
+                          fontSize: screenWidth / 15,
+                          color: prop.rang5,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0, bottom: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            "Blood Group:",
                             style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.bold,
-                              fontSize: screenWidth / 15,
+                              fontSize: screenWidth / 20,
                               color: prop.rang5,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, bottom: 15),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Blood Group:",
-                                style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: screenWidth / 20,
-                                  color: prop.rang5,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 0,
+                            ),
+                            child: Container(
+                              // height: screenheight * 0.1,
+                              width: screenWidth * 0.4,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  // enabledBorder: OutlineInputBorder(
+                                  //   borderSide: BorderSide(
+                                  //     width: 0,
+                                  //     color: prop.rang5,
+                                  //   ),
+                                  // ),
+                                  fillColor: prop.rang1,
+                                  focusColor: prop.rang2,
+                                  labelText: '',
+                                  helperText: '',
+                                  // filled: true,
                                 ),
                               ),
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 30,
-                                  ),
-                                  child: Container(
-                                    // height: screenheight * 0.1,
-                                    width: screenWidth * 0.4,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        // enabledBorder: OutlineInputBorder(
-                                        //   borderSide: BorderSide(
-                                        //     width: 0,
-                                        //     color: prop.rang5,
-                                        //   ),
-                                        // ),
-                                        fillColor: prop.rang1,
-                                        focusColor: prop.rang2,
-                                        labelText: '',
-                                        helperText: '',
-                                        // filled: true,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, bottom: 15),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                "Height:",
-                                style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: screenWidth / 20,
-                                  color: prop.rang5,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 90,
-                                  ),
-                                  child: Container(
-                                    // height: screenheight * 0.1,
-                                    width: screenWidth * 0.4,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        // enabledBorder: OutlineInputBorder(
-                                        //   borderSide: BorderSide(
-                                        //     width: 0,
-                                        //     color: prop.rang5,
-                                        //   ),
-                                        // ),
-                                        fillColor: prop.rang1,
-                                        focusColor: prop.rang2,
-                                        labelText: '',
-                                        helperText: '',
-                                        // filled: true,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, bottom: 15),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Weight:",
-                                style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: screenWidth / 20,
-                                  color: prop.rang5,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 80,
-                                  ),
-                                  child: Container(
-                                    // height: screenheight * 0.1,
-                                    width: screenWidth * 0.4,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        // enabledBorder: OutlineInputBorder(
-                                        //   borderSide: BorderSide(
-                                        //     width: 0,
-                                        //     color: prop.rang5,
-                                        //   ),
-                                        // ),
-                                        fillColor: prop.rang1,
-                                        focusColor: prop.rang2,
-                                        labelText: '',
-                                        helperText: '',
-                                        // filled: true,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10, bottom: 20, top: 25),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Write any medical Conditions\n you could have here",
-                                style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: screenWidth / 20,
-                                  color: prop.rang5,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          color: prop.rang2,
-                          child: TextField(
-                            // minLines: 3, // Set this
-                            maxLines: 6, // and this
-                            keyboardType: TextInputType.multiline,
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 0,
-                                  color: prop.rang5,
-                                ),
-                              ),
-                              fillColor: prop.rang1,
-                              focusColor: prop.rang2,
-                              labelText: '',
-                              helperText: '',
-                              // filled: true,
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                  ]),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: Container(
-                  // decoration: BoxDecoration(
-                  //   // color: prop.rang5,
-                  //   border: Border.all(color: prop.rang5),
-                  //   // boxShadow: [
-                  //   //   BoxShadow(
-                  //   //     color: prop.rang5,
-                  //   //     offset: const Offset(
-                  //   //       0.0,
-                  //   //       0.0,
-                  //   //     ),
-                  //   //     blurRadius: 2.0,
-                  //   //     spreadRadius: 1.0,
-                  //   //   ), //BoxShadow
-                  //   //   BoxShadow(
-                  //   //     color: prop.rang5,
-                  //   //     offset: const Offset(0.0, 0.0),
-                  //   //     blurRadius: 0.0,
-                  //   //     spreadRadius: 0.0,
-                  //   //   ), //BoxShadow
-                  //   // ],
-                  //   // borderRadius: BorderRadius.all(Radius.circular(10)),
-                  // ),
-                  height: screenheight * 0.07,
-                  width: screenWidth * 0.5,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: prop.rang1,
-                      foregroundColor: prop.rang1,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        ],
                       ),
-                      elevation: 6,
                     ),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => homePage(),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0, bottom: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            "Height:",
+                            style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.bold,
+                              fontSize: screenWidth / 20,
+                              color: prop.rang5,
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                left: 0,
+                              ),
+                              child: Container(
+                                // height: screenheight * 0.1,
+                                width: screenWidth * 0.4,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    // enabledBorder: OutlineInputBorder(
+                                    //   borderSide: BorderSide(
+                                    //     width: 0,
+                                    //     color: prop.rang5,
+                                    //   ),
+                                    // ),
+                                    fillColor: prop.rang1,
+                                    focusColor: prop.rang2,
+                                    labelText: '',
+                                    helperText: '',
+                                    // filled: true,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0, bottom: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            "Weight:",
+                            style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.bold,
+                              fontSize: screenWidth / 20,
+                              color: prop.rang5,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 0,
+                            ),
+                            child: Container(
+                              // height: screenheight * 0.1,
+                              width: screenWidth * 0.4,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  // enabledBorder: OutlineInputBorder(
+                                  //   borderSide: BorderSide(
+                                  //     width: 0,
+                                  //     color: prop.rang5,
+                                  //   ),
+                                  // ),
+                                  fillColor: prop.rang1,
+                                  focusColor: prop.rang2,
+                                  labelText: '',
+                                  helperText: '',
+                                  // filled: true,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 10, bottom: 20, top: 25),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Write any medical Conditions\n you could have here",
+                            style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.bold,
+                              fontSize: screenWidth / 20,
+                              color: prop.rang5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      color: prop.rang2,
+                      child: TextField(
+                        // minLines: 3, // Set this
+                        maxLines: 6, // and this
+                        keyboardType: TextInputType.multiline,
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              width: 0,
+                              color: prop.rang5,
+                            ),
+                          ),
+                          fillColor: prop.rang1,
+                          focusColor: prop.rang2,
+                          labelText: '',
+                          helperText: '',
+                          // filled: true,
                         ),
-                      );
-                    },
-                    child: Text(
-                      "Submit",
-                      style: GoogleFonts.montserrat(
-                        fontWeight: FontWeight.bold,
-                        fontSize: screenWidth / 17,
-                        color: prop.rang5,
                       ),
+                    )
+                  ],
+                ),
+              ]),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: Container(
+                // decoration: BoxDecoration(
+                //   // color: prop.rang5,
+                //   border: Border.all(color: prop.rang5),
+                //   // boxShadow: [
+                //   //   BoxShadow(
+                //   //     color: prop.rang5,
+                //   //     offset: const Offset(
+                //   //       0.0,
+                //   //       0.0,
+                //   //     ),
+                //   //     blurRadius: 2.0,
+                //   //     spreadRadius: 1.0,
+                //   //   ), //BoxShadow
+                //   //   BoxShadow(
+                //   //     color: prop.rang5,
+                //   //     offset: const Offset(0.0, 0.0),
+                //   //     blurRadius: 0.0,
+                //   //     spreadRadius: 0.0,
+                //   //   ), //BoxShadow
+                //   // ],
+                //   // borderRadius: BorderRadius.all(Radius.circular(10)),
+                // ),
+                height: screenheight * 0.07,
+                width: screenWidth * 0.5,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: prop.rang1,
+                    foregroundColor: prop.rang1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    elevation: 6,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => homePage(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Submit",
+                    style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.bold,
+                      fontSize: screenWidth / 17,
+                      color: prop.rang5,
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-      ),
+      ]),
     );
+    ;
   }
 }

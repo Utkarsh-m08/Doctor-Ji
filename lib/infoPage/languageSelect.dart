@@ -19,68 +19,86 @@ class _languageSelectState extends State<languageSelect> {
     // size variable
     double screenWidth = MediaQuery.of(context).size.width;
     double screenheight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 200),
-          child: Column(
-            children: [
-              Icon(
-                Icons.translate,
-                size: 60,
-              ),
-              Text(
-                "Choose you language",
-                style: GoogleFonts.montserrat(
-                  fontWeight: FontWeight.bold,
-                  fontSize: screenheight / 30,
-                  color: prop.rang5,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Container(
-                          height: screenWidth * 0.25,
-                          width: screenWidth * 0.25,
-                          color: prop.rang1,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: prop.rang1,
-                              foregroundColor: prop.rang1,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
+    return Dialog(
+      backgroundColor: prop.rang1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(12),
+        ),
+      ),
+      insetPadding: EdgeInsets.all(10),
+      child: Container(
+        height: screenheight * 0.3,
+        width: screenWidth * 0.95,
+        decoration: BoxDecoration(
+          color: prop.rang1,
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+        ),
+        child: ListView(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(screenWidth * 0.03),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.translate,
+                    size: 60,
+                  ),
+                  Text(
+                    "Choose you language",
+                    style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.bold,
+                      fontSize: screenWidth * 0.07,
+                      color: prop.rang5,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: screenWidth * .02,
+                      bottom: screenWidth * 0.02,
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            height: screenWidth * 0.26,
+                            width: screenWidth * 0.26,
+                            color: prop.rang1,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                locale:
+                                Locale('en');
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: prop.rang1,
+                                foregroundColor: prop.rang1,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                elevation: 6,
                               ),
-                              elevation: 6,
-                            ),
-                            child: Text(
-                              "English",
-                              style: GoogleFonts.montserrat(
-                                // fontWeight: FontWeight.bold,
-                                fontSize: screenheight / 40,
-                                color: prop.rang5,
+                              child: Text(
+                                "English",
+                                style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: screenWidth * 0.04,
+                                  color: prop.rang5,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Container(
-                          height: screenWidth * 0.25,
-                          width: screenWidth * 0.25,
-                          color: prop.rang1,
-                          child: ElevatedButton(
+                          Container(
+                            height: screenWidth * 0.26,
+                            width: screenWidth * 0.26,
+                            color: prop.rang1,
+                            child: ElevatedButton(
                               onPressed: () {
                                 Navigator.pop(context);
+                                locale:
+                                Locale('hi');
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: prop.rang1,
@@ -93,20 +111,18 @@ class _languageSelectState extends State<languageSelect> {
                               child: Text(
                                 "Hindi",
                                 style: GoogleFonts.montserrat(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: screenheight / 40,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: screenWidth * 0.04,
                                   color: prop.rang5,
                                 ),
-                              )),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Container(
-                          height: screenWidth * 0.25,
-                          width: screenWidth * 0.25,
-                          color: prop.rang1,
-                          child: ElevatedButton(
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: screenWidth * 0.26,
+                            width: screenWidth * 0.26,
+                            color: prop.rang1,
+                            child: ElevatedButton(
                               onPressed: () {
                                 Navigator.pop(context);
                               },
@@ -121,19 +137,21 @@ class _languageSelectState extends State<languageSelect> {
                               child: Text(
                                 "Pahadi",
                                 style: GoogleFonts.montserrat(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: screenheight / 40,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: screenWidth * 0.04,
                                   color: prop.rang5,
                                 ),
-                              )),
-                        ),
-                      )
-                    ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

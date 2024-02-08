@@ -47,55 +47,76 @@ class _homePageState extends State<homePage> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-          child: GNav(
-              selectedIndex: _selectedIndex,
-              onTabChange: (index) {
-                setState(
-                  () {
-                    _selectedIndex = index;
-                  },
-                );
-              },
-              rippleColor: prop.rang1, // tab button ripple color when pressed
-              hoverColor: prop.rang1, // tab button hover color
-              haptic: true, // haptic feedback
-              tabBorderRadius: 30,
-              tabActiveBorder:
-                  Border.all(color: prop.rang5, width: 1), // tab button border
-              // tabBorder:
-              //     Border.all(color: prop.rang5, width: 1), // tab button border
-              // tabShadow: [
-              //   BoxShadow(color: prop.rang1, blurRadius: 2)
-              // ], // tab button shadow
-              // curve: Curves.easeOutExpo, // tab animation curves
-              // duration: Duration(milliseconds: 10), // tab animation duration
-              gap: 5, // the tab button gap between icon and text
-              // color: prop.rang6, // unselected icon color
-              // activeColor: prop.rang1, // selected icon and text color
-              iconSize: 35, // tab button icon size
-              // tabBackgroundColor: prop.rang3, // selected tab background color
-              padding: EdgeInsets.symmetric(
-                  horizontal: 20, vertical: 5), // navigation bar padding
-              tabs: [
-                GButton(
-                  icon: Icons.local_hospital_outlined,
-                  text: 'Doctor JI',
-                ),
-                GButton(
-                  icon: Icons.access_time,
-                  text: 'Appointment',
-                ),
-                GButton(
-                  icon: Icons.account_circle_outlined,
-                  text: 'Profile',
-                ),
-              ]),
+      backgroundColor: rang1,
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(screenWidth * 0.005),
+        child: Container(
+          clipBehavior: Clip.none,
+          // height: screenheight * 0.15,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            // color: rang1,
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(screenWidth * 0.02),
+            child: GNav(
+                selectedIndex: _selectedIndex,
+                onTabChange: (index) {
+                  setState(
+                    () {
+                      _selectedIndex = index;
+                    },
+                  );
+                },
+                tabBorderRadius: 20,
+                textSize: screenheight * 0.50,
+                rippleColor: prop.rang1, // tab button ripple color when pressed
+                hoverColor: prop.rang1, // tab button hover color
+                haptic: true, // haptic feedback
+                tabActiveBorder: Border.all(
+                  color: prop.rang5,
+                  width: 1,
+                ), // tab button border
+                // tabBorder:
+                //     Border.all(color: prop.rang5, width: 1), // tab button border
+                // tabShadow: [
+                //   BoxShadow(color: prop.rang1, blurRadius: 2)
+                // ], // tab button shadow
+                // curve: Curves.easeOutExpo, // tab animation curves
+                // duration: Duration(milliseconds: 10), // tab animation duration
+                gap: 2, // the tab button gap between icon and text
+                // color: prop.rang6, // unselected icon color
+                // activeColor: prop.rang1, // selected icon and text color
+                // iconSize: 35, // tab button icon size
+                // tabBackgroundColor: prop.rang3, // selected tab background color
+                // iconSize: screenWidth ,
+                padding: EdgeInsets.symmetric(
+                  horizontal: screenWidth * 0.06,
+                  vertical: screenWidth * 0.03,
+                ), // navigation bar padding
+                tabs: [
+                  GButton(
+                    icon: Icons.local_hospital_outlined,
+                    text: 'Doctor JI',
+                    textSize: screenheight,
+                  ),
+                  GButton(
+                    icon: Icons.access_time,
+                    text: 'Appointment',
+                    textSize: screenheight,
+                  ),
+                  GButton(
+                    icon: Icons.account_circle_outlined,
+                    text: 'Profile',
+                    textSize: screenheight,
+                  ),
+                ]),
+          ),
         ),
-        backgroundColor: rang1,
-        body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ));
+      ),
+    );
   }
 }
