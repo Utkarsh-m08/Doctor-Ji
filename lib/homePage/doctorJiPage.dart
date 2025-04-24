@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/homePage/emergencySos.dart';
 import 'package:flutter_application_1/homePage/homePage.dart';
 import 'package:flutter_application_1/homePage/navBar/navBar.dart';
+import 'package:flutter_application_1/homePage/nearestHospital.dart';
 import 'package:flutter_application_1/homePage/profile.dart';
 import 'package:flutter_application_1/personalInfo/personalInfo.dart';
 import 'package:flutter_application_1/properties/prop.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application_1/properties/prop.dart' as prop;
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -16,6 +20,68 @@ class doctorJiPage extends StatefulWidget {
 }
 
 class _doctorJiPageState extends State<doctorJiPage> {
+  late String lat;
+  late String long;
+  String? locationMessage;
+  bool locationLoaded = false;
+  bool captionLoaded = false;
+  TextEditingController _captionController = TextEditingController();
+
+  // for location to work
+  Future<Position> getCurrentLocation() async {
+    await Geolocator.checkPermission();
+    await Geolocator.requestPermission();
+    Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high);
+    
+    return await Geolocator.getCurrentPosition();
+
+    // bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    // if (!serviceEnabled) {
+    //   return Future.error('location services are dissabled');
+    // }
+
+    // LocationPermission permission = await Geolocator.checkPermission();
+    // if (permission == LocationPermission.denied) {
+    //   permission = await Geolocator.requestPermission();
+    //   if (permission == LocationPermission.denied) {
+    //     return Future.error('location Permission are denied');
+    //   }
+    // }
+
+    // if (permission == LocationPermission.deniedForever) {
+    //   return Future.error(
+    //     'locationpermission denied,  we cannot process request',
+    //   );
+    // }
+
+    // Position position = await Geolocator.getCurrentPosition(
+    //   desiredAccuracy: LocationAccuracy.high,
+    // );
+
+    // return await Geolocator.getCurrentPosition();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLocation();
+  }
+
+  Future<void> _loadLocation() async {
+    try {
+      Position position = await getCurrentLocation();
+      setState(() {
+        lat = '${position.latitude}';
+        long = '${position.longitude}';
+        locationMessage = 'Latitude: $lat, Longitude: $long';
+        locationLoaded = true;
+      });
+    } catch (e) {
+      print('Error loading location: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -160,7 +226,16 @@ class _doctorJiPageState extends State<doctorJiPage> {
                             backgroundColor: prop.rang1,
                             foregroundColor: prop.rang1Text,
                           ),
-                          onPressed: () {},
+                          onPressed: () async {
+                            Navigator.push(
+                              context,
+                              DialogRoute(
+                                context: context,
+                                builder: (context) => nearestHospital(),
+                              ),
+                            );
+                            await getCurrentLocation();
+                          },
                           label: Text(
                             "Find nearest    hospital",
                             style: GoogleFonts.montserrat(
@@ -190,7 +265,15 @@ class _doctorJiPageState extends State<doctorJiPage> {
                             backgroundColor: prop.rang1,
                             foregroundColor: prop.rang1Text,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              DialogRoute(
+                                context: context,
+                                builder: (context) => emergencySos(),
+                              ),
+                            );
+                          },
                           label: Text(
                             "Emergency\nSOS",
                             style: GoogleFonts.montserrat(

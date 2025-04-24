@@ -4,6 +4,9 @@ import 'package:flutter_application_1/homePage/homePage.dart';
 import 'package:flutter_application_1/infoPage/infoPage.dart';
 import 'package:flutter_application_1/loginSignin/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_application_1/properties/prop.dart' as prop;
 
 class languageSelect extends StatefulWidget {
@@ -99,6 +102,7 @@ class _languageSelectState extends State<languageSelect> {
                                 Navigator.pop(context);
                                 locale:
                                 Locale('hi');
+                                
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: prop.rang1,
@@ -155,5 +159,14 @@ class _languageSelectState extends State<languageSelect> {
         ),
       ),
     );
+  }
+}
+
+void _setLocale(String? value) {
+  if (value == null) return;
+  if (value == 'en') {
+    _setLocale('en');
+  } else if (value == 'hi') {
+    _setLocale('hi');
   }
 }

@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/firebase_options.dart';
@@ -7,13 +8,23 @@ import 'infoPage/infoPage.dart';
 import 'package:flutter_application_1/properties/prop.dart' as prop;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+late List<CameraDescription> _cameras;
+List<CameraDescription> getCamera() {
+  return _cameras;
+}
+
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();  
+  _cameras = await availableCameras();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
 }
+
+String lang = 'en';
+Locale locale = Locale('en');
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -30,7 +41,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      locale: Locale('hi'),
+      locale: Locale('en'),
       supportedLocales: [
         Locale('en'),
         Locale('hi'),
